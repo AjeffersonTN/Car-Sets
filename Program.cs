@@ -33,10 +33,44 @@ namespace carSets
 
             Showroom.Remove("H1");
 
-             foreach (string model in Showroom)
+            //  foreach (string model in Showroom)
+            // {
+            //     Console.WriteLine(model);
+            // }
+
+            HashSet<string> Junkyard = new HashSet<string>();
+            Junkyard.Add("Fiat");
+            Junkyard.Add("5 Series");
+            Junkyard.Add("MKZ");
+            Junkyard.Add("Chevelle");
+            Junkyard.Add("M6");
+            Junkyard.Add("Escalade");
+
+          HashSet<string> clone = new HashSet<string>(Showroom);
+          clone.IntersectWith(Junkyard);
+
+
+            //  foreach (string model in clone)
+            // {
+            //     Console.WriteLine(model);
+            // }
+
+            Showroom.UnionWith(Junkyard);
+
+            //   foreach (string model in Showroom)
+            // {
+            //     Console.WriteLine(model);
+            // }
+
+            Showroom.Remove("Fiat");
+            Showroom.Remove("MKZ");
+
+              foreach (string model in Showroom)
             {
                 Console.WriteLine(model);
             }
+
+
         }
     }
 }
